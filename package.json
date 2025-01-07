@@ -1,0 +1,44 @@
+{
+  "name": "gitleaks",
+  "version": "0.0.1",
+  "description": "uses gitleaks tool to detect secrets within a code base",
+  "main": "lib/main.js",
+  "scripts": {
+    "build": "tsc && ncc build --source-map",
+    "format": "prettier --write **/*.ts",
+    "format-check": "prettier --check **/*.ts",
+    "lint": "eslint src/**/*.ts",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aloong-actions/gitleaks"
+  },
+  "keywords": [
+    "github",
+    "actions",
+    "secrets",
+    "gitleaks"
+  ],
+  "author": "Loong Zhou",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/jest": "^27.4.1",
+    "@types/node": "^17.0.29",
+    "@vercel/ncc": "^0.33.4",
+    "eslint": "^8.14.0",
+    "jest": "^28.0.2",
+    "prettier": "^2.6.2",
+    "typescript": "^4.6.3"
+  },
+  "dependencies": {
+    "@actions/artifact": "^1.0.0",
+    "@actions/core": "^1.7.0",
+    "@actions/exec": "^1.1.1",
+    "@actions/github": "^5.0.1",
+    "@actions/tool-cache": "^1.7.2",
+    "@iarna/toml": "^2.2.5",
+    "path": "^0.12.7",
+    "toml": "^3.0.0"
+  }
+}

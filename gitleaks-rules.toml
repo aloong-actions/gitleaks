@@ -1,0 +1,116 @@
+[[rules]]
+description = "Generic API Key"
+id = "generic-api-key"
+regex = '''(?i)(?:key|token|pat[^ht]|secret|password|pwd|passwd|auth)(?:[0-9a-z\-_\s.]{0,20})(?:[\s|']|[\s|"]){0,3}(?:=|>|:=|\|\|:|<=|=>|:)(?:'|\"|\s|=|\x60){0,5}([0-9a-z\-_.=]{2,})(?:['|\"|\n|\r|\s|\x60]|$)'''
+secretGroup = 1
+entropy = 3.5
+keywords = [
+    "key","api","token","secret","pat","password","auth",
+]
+[rules.allowlist]
+regexes = [
+  '''(?i)__[0-9a-z\-_]*__'''
+]
+
+[[rules]]
+description = "AWS"
+id = "aws-access-token"
+regex = '''(A3T[A-Z0-9]|AKIA|AGPA|AIDA|AROA|AIPA|ANPA|ANVA|ASIA)[A-Z0-9]{16}'''
+keywords = [
+    "akia","agpa","aida","aroa","aipa","anpa","anva","asia",
+]
+
+[[rules]]
+description = "Private Key"
+id = "private-key"
+regex = '''(?i)-----BEGIN[ A-Z0-9_-]{0,100}PRIVATE KEY-----[\s\S-]*KEY----'''
+keywords = [
+    "-----begin",
+]
+
+[[rules]]
+description = "GitHub Personal Access Token"
+id = "github-pat"
+regex = '''ghp_[0-9a-zA-Z]{36}'''
+keywords = [
+    "ghp_",
+]
+
+[[rules]]
+description = "Amazon Secret"
+id = "amazon-mws-auth"
+regex = '''(?i)amzn\\.mws\\.[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}'''
+
+# [[rules]]
+# description = "Duo Secret"
+# id = "duo-secret"
+# regex = '''(?i)[sS][kK][eE][yY].*[0-9a-zA-Z]{40}'''
+
+[[rules]]
+description = "Duo API"
+id = "duo-api"
+regex = '''(?i)api\-6dd2dccd\.duosecurity\.com'''
+
+[[rules]]
+description = "Facebook Access Token"
+id = "facebook-access-token"
+regex = '''(?i)EAACEdEose0cBA[0-9A-Za-z]+'''
+
+[[rules]]
+description = "Facebook OAuth"
+id = "facebook-oauth"
+regex = '''(?i)[fF][aA][cC][eE][bB][oO][oO][kK].*['|\"][0-9a-f]{32}['|\"]'''
+
+[[rules]]
+description = "Google API Key"
+id = "google-api-key"
+regex = '''(?i)AIza[0-9A-Za-z\\-_]{35}'''
+
+[[rules]]
+description = "Google OAuth"
+id = "google-oauth"
+regex = '''[0-9]+-[0-9A-Za-z_]{32}\\.apps\\.googleusercontent\\.com'''
+
+[[rules]]
+description = "Google OAuth Access Token"
+id = "google-oauth-account-token"
+regex = '''(?i)ya29\\.[0-9A-Za-z\\-_]+'''
+
+[[rules]]
+description = "Heroku Secret"
+id = "heroku"
+regex = '''(?i)[hH][eE][rR][oO][kK][uU].*[0-9A-F]{8}-[0-9A-F]{4}-[0-9A-F]{4}-[0-9A-F]{4}-[0-9A-F]{12}'''
+
+[[rules]]
+description = "MailGun Secret"
+id = "mailgun"
+regex = '''(?i)key-[0-9a-zA-Z]{32}'''
+
+[[rules]]
+description = "PayPal Secret"
+id = "paypal"
+regex = '''(?i)access_token\\$production\\$[0-9a-z]{16}\\$[0-9a-f]{32}'''
+
+[[rules]]
+description = "Picatic Secret"
+id = "picatic"
+regex = '''(?i)sk_live_[0-9a-z]{32}'''
+
+[[rules]]
+description = "Square Secret"
+id = "square"
+regex = '''(?i)sq0csp-([0-9A-Za-z\\-_]{43}|[0-9A-Za-z\\-_]{22})'''
+
+[[rules]]
+description = "Telegram Secret"
+id = "telegram"
+regex = '''(?i)[0-9]+:AA[0-9A-Za-z\\-_]{33}'''
+
+[[rules]]
+description = "Twitter Secret"
+id = "twitter"
+regex = '''(?i)(?:twitter)(?:[0-9a-z\-_\s.]{0,20})(?:[\s|']|[\s|"]){0,3}(?:=|>|:=|\|\|:|<=|=>|:)(?:'|\"|\s|=|\x60){0,5}([a-f0-9]{35,44})(?:['|\"|\n|\r|\s|\x60]|$)'''
+secretGroup = 1
+keywords = [
+    "twitter",
+]

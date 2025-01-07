@@ -1,0 +1,43 @@
+name: 'gitleaks'
+description: 'gitleaks scan secrets'
+branding:
+  icon: 'lock'
+  color: 'blue'
+
+inputs:
+  token:
+    description: GitHub Access Token
+    required: false
+    default: ${{ github.token }}
+  version:
+    description: gitleaks tool version
+    required: false
+    default: '8.8.4'
+  config:
+    description: gitleaks config file path to the repo's root path
+    required: false
+    default: '.gitleaks.toml'
+  rule-merge-mode:
+    description: >
+      The policy applied to the customized config file and base rules.
+      options: (replace|retain|ignore) (default retain)
+      replace:  merge base rules with customized rules,
+                replace the rule of customized file if the rule id is same in the two files
+      retain:   merge base rules with customized rules,
+                retain the rule of customized file if the rule id is same in the two files
+      ignore:   don't apply the base rules
+    required: false
+    default: retain
+  format:
+    description: report format (json, csv, sarif) (default "csv")
+    required: false
+    default: 'csv'
+  report-file-prefix:
+    description: filename = <report-file-prefix>-<reponame>-<runid>.<format>
+    required: false
+    default: 'gitleaks'
+
+runs:
+  using: 'node16'
+  main: 'dist/index.js'
+  post: 'dist/index.js'
