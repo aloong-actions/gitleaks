@@ -1,5 +1,5 @@
 # gitleaks
-[![Secret Scan](https://github.com/aloong-actions/gitleaks/actions/workflows/blackduck.yml/badge.svg)](https://github.com/aloong-actions/gitleaks/actions/workflows/blackduck.yml) [![CI](https://github.com/aloong-actions/gitleaks/actions/workflows/ci.yml/badge.svg)](https://github.com/aloong-actions/gitleaks/actions/workflows/ci.yml)
+[![CI](https://github.com/aloong-actions/gitleaks/actions/workflows/ci.yml/badge.svg)](https://github.com/aloong-actions/gitleaks/actions/workflows/ci.yml)
 
 This github action is used to scan secrets in your repository with [gitleaks](https://github.com/zricethezav/gitleaks). Gitleaks is a SAST tool for detecting and preventing hardcoded secrets like passwords, api keys, and tokens in git repos.
 
