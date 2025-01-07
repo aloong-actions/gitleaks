@@ -47,7 +47,8 @@ jobs:
         with:
           node-version: '16'
       - name: Scan Secrets
-        uses: aloong-actions/gitleaks-scan@v1.0.0
+        uses: aloong-actions/gitleaks-scan@v1  # or aloong-actions/gitleaks-scan@latest
+
 ```
 
 Add `.gitleaks.toml` in the root of your repository. You may copy the config under  `sample/.gitleaks.toml` in this repo as your baseline. If your have specified `config` in your action(for example: `config: gitleaks/.gitleaks.toml`), make the file consistent with your specification.
