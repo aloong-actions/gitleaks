@@ -11,7 +11,7 @@ jobs:
   release-action-job:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
       - name: Tag latest release
         uses: Actions-R-Us/actions-tagger@latest
