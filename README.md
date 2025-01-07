@@ -38,7 +38,7 @@ on: [ push, pull_request ]
 
 jobs:
   build:
-    runs-on: [ ebf-pod-ubuntu-2004-slim ]
+    runs-on: ubuntu-latest
     steps:
         # must checkout first
       - name: Checkout
