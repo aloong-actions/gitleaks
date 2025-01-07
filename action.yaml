@@ -1,4 +1,4 @@
-name: 'gitleaks'
+name: 'gitleaks-scan'
 description: 'gitleaks scan secrets'
 branding:
   icon: 'lock'
